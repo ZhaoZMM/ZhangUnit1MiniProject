@@ -1,17 +1,26 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        Scanner Scan = new Scanner(System.in);
+        System.out.print("Cost of Bill: $");
+        double bill=Scan.nextDouble();
+        System.out.print("Tip Percent in Decimals: ");
+        double tipPrc=Scan.nextDouble();
+        System.out.print("Number of People: ");
+        int numPeople=Scan.nextInt();
+        //double =((int)(100x))/100
+        double totalTip=bill*tipPrc;
+        totalTip=((int)(100*totalTip))/100.0;
+        double totalCost=bill+totalTip;
+        totalTip=((int)(100*totalTip))/100.0;
+        double tipPer=totalTip/numPeople;
+        tipPer=((int)(100*totalTip))/100.0;
+        double totalPer=totalCost/numPeople;
+        totalPer=((int)(100*totalPer))/100.0;
+        System.out.println("The total cost of the tip is $"+totalTip);
+        System.out.println("The total cost of the bill is $"+totalCost);
+        System.out.println("The cost of the tip per person is $"+tipPer);
+        System.out.println("The cost of the bill per person is $"+totalPer);
     }
 }
